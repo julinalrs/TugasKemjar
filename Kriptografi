@@ -1,0 +1,16 @@
+def enkripsi (text, shift):
+    hasil = ""  
+  
+    for i in range(len(text)):  
+        char = text[i]  
+  
+        if (char.isupper()):  
+            hasil += chr((ord(char) + shift - 65) % 26 + 65)  
+        else:  
+            hasil += chr((ord(char) + shift - 97) % 26 + 97)  
+    return hasil  
+
+text = input("Masukkan kata yang akan dienkripsi : ")
+shift = int(input("Masukkan besar nilai pergeseran : "))
+
+print("Hasil enkripsi : " + enkripsi(text, shift))
